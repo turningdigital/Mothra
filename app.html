@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,300,700,300italic,700italic' rel='stylesheet' type='text/css'>
+
 	<link href="content/lib/bootstrap.min.css" rel="stylesheet" />
 	<link href="content/lib/font-awesome.min.css" rel="stylesheet" />
 	<link href="content/app.css" rel="stylesheet" />
 </head>
+
 <body style="background-color: #eee;">
 	<div style="width: 500px; height: 400px">
-		<div class="topnav">
-			<div class="pull-left">
-				Left
-			</div>
-			<div class="pull-right">
+		<div class="topnav pull-left">
+			<div class="pull-left title-text" style="padding-left: 8px;">
 				<span>
-					<i class="fa fa-bug icon-filter"></i>
+					<img src="content/images/icon-19.png" style="margin-top: -4px; margin-right: 4px;"> 
 				</span>
 				<span>
-					<i class="fa fa-globe" aria-hidden="true"></i>
-				</span>
-				<span>
-					<i class="fa fa-check-square" aria-hidden="true"></i>
+					Mothra
 				</span>
 			</div>
+			<div class="pull-right" style="padding-top: 6px; padding-right: 10px; margin-right: 8px;">
+				<span>
+					<i class="fa fa-fw fa-bug icon-filter"></i>
+				</span>
+				<span>
+					<i class="fa fa-fw fa-globe icon-filter" aria-hidden="true"></i>
+				</span>
+				<span>
+					<i class="fa fa-fw fa-check-square icon-filter" aria-hidden="true"></i>
+				</span>
+			</div>
+		</div>
+		<div class="content">
+			content
 		</div>
 	</div>
 	<script src="src/lib/knockout-3.4.0.js"></script>
 	<script src='src/lib/knockout-secure-binding.js'></script>
 	<script src="src/app.js"></script>
 </body>
+
 </html>

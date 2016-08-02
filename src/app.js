@@ -12,8 +12,8 @@
 		testtext: ko.observable('yahoo'),
 	};
 
-	// need to override the default ko data-bind
-	// to make it CSP compliant
+	// need to override the default ko data-bind to make it
+	// CSP compliant which is chrome extension requirement
 	// https://github.com/brianmhunt/knockout-secure-binding
 	var options = {
 		attribute: "data-bind",
@@ -24,6 +24,8 @@
 	ko.bindingProvider.instance = new ko.secureBindingsProvider(options);
 
 	ko.applyBindings(app);
+
+	self.variable = ko.observableArray();
 
 	console.info('initialized');
 }());
