@@ -1,0 +1,18 @@
+{
+	"name": "Mothra",
+	"version": "0.1",
+	"manifest_version": 2,
+	"description": "Mothra is Jira's ally",
+	"browser_action": {
+		"default_icon": {
+			"19": "content/images/icon-19.png",
+			"38": "content/images/icon-38.png"
+		},
+		"default_title": "Mothra",
+		"default_popup": "app.html"
+	},
+	"permissions": [
+		"topSites",
+		"tabs"
+	]
+}
