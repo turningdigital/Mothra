@@ -1,31 +1,12 @@
 (function() {
+	'use strict';
 
-	var f1 = Filter.create({
-		name: 'My Saved Filter One',
-		query: 'cool query 1'
-	});
-	Filter.save(f1);
-
-	var f2 = Filter.create({
-		name: 'My Saved Filter Two',
-		query: 'cool query 2'
-	});
-	Filter.save(f2);
-
-	var fs = Filter.list();
+	//Filter.seed();
 
 	var app = {
-		testtext: ko.observable('yahoo'),
+		filters: Filter.list(),
 
-		showMenu: function(item, e) {
-			$(e.target).next('.actions').animate({ left: '0'}, 75);
-			$(e.target).toggleClass('blurry');
-		},
-
-		hideMenu: function(item, e) {
-			$(e.target).animate({ left: '147'}, 75)
-			$(e.target).prev('.main').toggleClass('blurry');
-		}
+		
 	};
 
 	// need to override the default ko data-bind to make it
@@ -40,12 +21,6 @@
 	ko.bindingProvider.instance = new ko.secureBindingsProvider(options);
 
 	ko.applyBindings(app);
-
-	self.variable = ko.observableArray();
-
-
-
-	//set
 
 	console.info('initialized');
 }());

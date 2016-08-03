@@ -7,7 +7,9 @@
 	<link href="content/lib/bootstrap.min.css" rel="stylesheet" />
 	<link href="content/lib/font-awesome.min.css" rel="stylesheet" />
 	<link href="content/lib/animate.min.css" rel="stylesheet" />
+
 	<link href="content/app.css" rel="stylesheet" />
+	<link href="src/components/tile/tile.css" rel="stylesheet" />
 </head>
 
 <body style="background-color: #eee;">
@@ -44,67 +46,12 @@
 		</div>
 
 		<div class="content">
-			<div class="tile" data-bind="event: { mouseenter: showMenu, mouseleave: hideMenu }">
-				<div class="main" style="background-color: #567EBB;">
-					DWINS-44<br>
-					<span style="font-weight: 400;">Changes not saved when changing Carrier in Shipping</span>
-				</div>
-				<div class="menu actions" style="">
-					<!--<div class="row" style="height: 50%;">
-						<div class="col-xs-6">
-							a
-						</div>
-						<div class="col-xs-6">
-							b
-						</div>
-					</div>
-					<div class="row" style="height: 50%;">
-						<div class="col-xs-6">
-							c
-						</div>
-						<div class="col-xs-6">
-							d
-						</div>
-					</div>-->
-					<table style="width: 100%; height: 100%">
-						<tr>
-							<td style="width: 50%; vertical-align: middle; text-align: center">
-								AAA
-							</td>
-							<td style="vertical-align: middle; text-align: center">
-								BBB
-							</td>
-						</tr>
-						<tr>
-							<td style="width: 50%; vertical-align: middle; text-align: center">
-								CCC
-							</td>
-							<td style="vertical-align: middle; text-align: center">
-								DDD
-							</td>
-						</tr>
-					</table>
-				</div>
-				<div class="menu" style="background-color: green;">menu2</div>
-			</div>
-		</div>
-
-		<!--<br><br><br><br>
-
-		<div class="content">
-			<ul class="box-container">
-				<li>DWINS-123</li>
-				<li>DWINS-6</li>
-				<li>DWINS-34</li>
-				<li>DWINS-12</li>
-				<li>DWINS-45</li>
-				<li>DWINS-34</li>
-				<li>DWINS-12</li>
-				<li>DWINS-45</li>
-				<li>DWINS-12</li>
-				<li>DWINS-45</li>
+			<ul class="box-container" data-bind="foreach: filters">
+				<li>
+					<tile></tile>
+				</li>
 			</ul>
-		</div>-->
+		</div>
 	</div>
 	<footer class="footer">
 		<div class="" style="padding: 5px;">
@@ -120,6 +67,7 @@
 	<script src='src/lib/knockout-secure-binding.js'></script>
 
 	<script src="src/models/filter.js"></script>
+	<script src="srccomponents/tile.js"></script>
 
 	<script src="src/app.js"></script>
 </body>
