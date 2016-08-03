@@ -1,12 +1,18 @@
 (function() {
 
-	var filters = [
-		{
-			name: '',
-			icon: '',
-			rule: '',
-		}
-	];
+	var f1 = Filter.create({
+		name: 'My Saved Filter One',
+		query: 'cool query 1'
+	});
+	Filter.save(f1);
+
+	var f2 = Filter.create({
+		name: 'My Saved Filter Two',
+		query: 'cool query 2'
+	});
+	Filter.save(f2);
+
+	var fs = Filter.list();
 
 	var app = {
 		testtext: ko.observable('yahoo'),
