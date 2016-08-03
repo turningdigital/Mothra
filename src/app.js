@@ -10,6 +10,16 @@
 
 	var app = {
 		testtext: ko.observable('yahoo'),
+
+		showMenu: function(item, e) {
+			$(e.target).next('.actions').animate({ left: '0'}, 75);
+			$(e.target).toggleClass('blurry');
+		},
+
+		hideMenu: function(item, e) {
+			$(e.target).animate({ left: '147'}, 75)
+			$(e.target).prev('.main').toggleClass('blurry');
+		}
 	};
 
 	// need to override the default ko data-bind to make it
@@ -26,6 +36,10 @@
 	ko.applyBindings(app);
 
 	self.variable = ko.observableArray();
+
+
+
+	//set
 
 	console.info('initialized');
 }());
