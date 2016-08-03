@@ -1,3 +1,5 @@
+var templates = {};
+
 (function() {
 	'use strict';
 
@@ -6,7 +8,7 @@
 	var app = {
 		filters: Filter.list(),
 
-		
+		templatesLoaded: ko.observable(false)
 	};
 
 	// need to override the default ko data-bind to make it
@@ -21,6 +23,12 @@
 	ko.bindingProvider.instance = new ko.secureBindingsProvider(options);
 
 	ko.applyBindings(app);
+
+	$.get('src/components/tile/tile.html')
+		.done(function(tileTemplate) {
+			templates['tile'] = tileTemplate;
+			app.templatesLoaded(true);
+		});
 
 	console.info('initialized');
 }());

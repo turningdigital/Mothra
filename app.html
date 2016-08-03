@@ -46,11 +46,13 @@
 		</div>
 
 		<div class="content">
+			<!-- ko if: templatesLoaded -->
 			<ul class="box-container" data-bind="foreach: filters">
 				<li>
-					<tile></tile>
+					<tile params="$data"></tile>
 				</li>
 			</ul>
+			<!-- /ko -->
 		</div>
 	</div>
 	<footer class="footer">
@@ -67,9 +69,10 @@
 	<script src='src/lib/knockout-secure-binding.js'></script>
 
 	<script src="src/models/filter.js"></script>
-	<script src="srccomponents/tile.js"></script>
 
 	<script src="src/app.js"></script>
+	<script src="src/components/tile/tile.js"></script>
+
 </body>
 
 </html>

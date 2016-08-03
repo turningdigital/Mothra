@@ -4,9 +4,14 @@ ko.components.register('tile', {
 	viewModel: function (params) {
 		var self = this;
 
+		self.filter = params;
+
+		console.log('hello');
 	},
 
-	template: 'hello'
+	template: function() {
+		return 'wow';
+	}
 });
 
 
