@@ -10,6 +10,7 @@
 
 	<link href="content/app.css" rel="stylesheet" />
 	<link href="src/components/tile/tile.css" rel="stylesheet" />
+	<link href="src/components/filterbuttons/filterbuttons.css" rel="stylesheet" />
 </head>
 
 <body style="background-color: #eee;">
@@ -26,34 +27,21 @@
 					Jira's Ally
 				</span>
 			</div>
-			<div class="pull-right icon-container">
-				<span>
-					<i class="fa fa-fw fa-bug icon-filter"></i>
-				</span>
-				<span>
-					<i class="fa fa-fw fa-globe icon-filter"></i>
-				</span>
-				<span>
-					<i class="fa fa-fw fa-check-square icon-filter"></i>
-				</span>
-				<span>
-					<i class="fa fa-fw fa-sort icon-filter"></i>
-				</span>
-				<span>
-					<i class="fa fa-fw fa-bars icon-filter"></i>
-				</span>
+			<div class="pull-right">
+				<filterbuttons params="filters: filters"></filterbuttons>
 			</div>
 		</div>
 
+
+
 		<div class="content">
-			<!-- ko if: templatesLoaded -->
-			<ul class="box-container" data-bind="foreach: filters">
+			<!--<ul class="box-container" data-bind="foreach: filters">
 				<li>
 					<tile params="$data"></tile>
 				</li>
-			</ul>
-			<!-- /ko -->
+			</ul>-->
 		</div>
+		
 	</div>
 	<footer class="footer">
 		<div class="" style="padding: 5px;">
@@ -64,14 +52,7 @@
 			</div>
 		</div>
 	</footer>
-	<script src="src/lib/jquery-3.1.0.min.js"></script>
-	<script src="src/lib/knockout-3.4.0.js"></script>
-	<script src='src/lib/knockout-secure-binding.js'></script>
-
-	<script src="src/models/filter.js"></script>
-
-	<script src="src/app.js"></script>
-	<script src="src/components/tile/tile.js"></script>
+	<script src="src/lib/require.js" data-main="src/app.js"></script>
 
 </body>
 

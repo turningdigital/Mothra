@@ -1,34 +1,57 @@
-var templates = {};
+require.config({
+	baseUrl: 'src/',
+	waitSeconds: 5,
+	paths: {
+		jquery: 'lib/jquery',
+		bootstrap: 'lib/bootstrap',
+		knockout: 'lib/knockout',
+		kosecurebindings: 'lib/knockout-secure-binding',
+		text: 'lib/require-text'
+	},
+	shim: {
+		'bootstrap': { deps: ['jquery'] },
+	},
+	deps: [
+		'knockout',
+		'kosecurebindings'
+	],
+	callback: function (ko, kosecurebindings) {
+		ko.secureBindingsProvider = kosecurebindings;
+	}
+});
 
-(function() {
-	'use strict';
+require([
+		'jquery',
+		'knockout',
+		'models/filter',
+		'components/tile/tile',
+		'components/filterbuttons/filterbuttons',
+		'bootstrap',
+		'lib/domReady!'
+	],
+	function($, ko, Filter) {
+		'use strict';
 
-	//Filter.seed();
+		//Filter.seed();
 
-	var app = {
-		filters: Filter.list(),
+		var app = {
 
-		templatesLoaded: ko.observable(false)
-	};
+			filters: Filter.list()
 
-	// need to override the default ko data-bind to make it
-	// CSP compliant which is chrome extension requirement
-	// https://github.com/brianmhunt/knockout-secure-binding
-	var options = {
-		attribute: "data-bind",
-		globals: window,
-		bindings: ko.bindingHandlers,
-		noVirtualElements: false
-	};
-	ko.bindingProvider.instance = new ko.secureBindingsProvider(options);
+		};
 
-	ko.applyBindings(app);
+		// need to override the default ko data-bindings to make it
+		// CSP compliant which is a chrome extension requirement
+		// https://github.com/brianmhunt/knockout-secure-binding
+		var options = {
+			attribute: "data-bind",
+			globals: window,
+			bindings: ko.bindingHandlers,
+			noVirtualElements: false
+		};
+		ko.bindingProvider.instance = new ko.secureBindingsProvider(options);
 
-	$.get('src/components/tile/tile.html')
-		.done(function(tileTemplate) {
-			templates['tile'] = tileTemplate;
-			app.templatesLoaded(true);
-		});
+		ko.applyBindings(app);
 
-	console.info('initialized');
-}());
+		console.info('initialized');
+	});
