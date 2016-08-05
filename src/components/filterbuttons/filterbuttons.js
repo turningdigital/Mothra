@@ -9,7 +9,19 @@ define([
 			viewModel: function(params) {
 				var self = this;
 
-				self.filters = params;
+				self.filters = params.filters();
+
+				self.refresh = function() {
+					console.log('refresh');
+				};
+
+				self.options = function() {
+					console.log('options');
+				};
+
+				setTimeout(function() {
+					$('[data-toggle="tooltip"]').tooltip();
+				}, 10);
 			},
 
 			template: template

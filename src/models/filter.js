@@ -16,6 +16,10 @@ define([
 			self.query = ko.observable(query);
 			self.enabled = ko.observable(enabled);
 			self.icon = ko.observable(icon);
+
+			self.execute = function() {
+				console.log(this);
+			};
 		};
 
 		return {

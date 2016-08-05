@@ -1,6 +1,16 @@
-hello
-<div class="container" data-bind="foreach: filters">
-	<span>
-		<i class="fa fa-fw fa-bug filter" style="color: #fff">fff</i>
+<div class="container">
+	<!-- ko foreach: filters -->
+	<span data-toggle="tooltip" data-placement="bottom" data-bind="click: execute, attr: { title: name }">
+		<i class="fa fa-fw" data-bind="css: icon"></i>
+	</span>
+	<!-- /ko -->
+	<span data-toggle="tooltip" data-placement="bottom" title="Sort By">
+			<i class="fa fa-fw fa-sort"></i>
+	</span>
+	<span data-toggle="tooltip" data-placement="bottom" title="Refresh" data-bind="click: refresh, attr: { title: name }">
+		<i  class="fa fa-fw fa-refresh"></i>
+	</span>
+	<span data-placement="bottom" data-toggle="tooltip" title="Options" data-bind="click: options, attr: { title: name }">
+		<i class="fa fa-fw fa-bars"></i>
 	</span>
 </div>

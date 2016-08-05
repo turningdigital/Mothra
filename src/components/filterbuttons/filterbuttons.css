@@ -1,13 +1,14 @@
 filterbuttons .container {
 	padding-top: 6px;
 	padding-right: 8px;
-	margin-right: 8px;
 }
 
 filterbuttons .container span {
-	padding-left: 5px;
+	padding-left: 4px;
+	cursor: pointer;
 }
 
-filterbuttons .filter {
+filterbuttons .container span i {
 	font-size: 14pt;
+	color: #DCE0E6;
 }

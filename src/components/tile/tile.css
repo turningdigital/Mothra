@@ -1,5 +1,4 @@
 .tile {
-	color: #fff;
 	font-weight: 700;
 	width: 147px;
 	overflow: hidden;
@@ -7,23 +6,36 @@
 	cursor: pointer;
 }
 
-.tile .blurry {
-	color: transparent;
-	text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+.tile .main {
+	color: #DCE0E6;
 }
 
 .tile> div {
-	padding: 5px;
 	height: 147px;
 	width: 147px;
 }
 
 .tile .menu {
-	color: #fff;
 	position: absolute;
 	top: 0;
 	left: 147px;
 	z-index: 5;
-	/*background-color: #fff;*/
-	/*opacity: .2;*/
+}
+
+.tile .menu> table {
+	background-color: #dce0e6;
+}
+
+tile table> tbody> tr> td {
+	border: 3px solid #567ebb;
+	width: 50%;
+	color: #2B4C7E;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 25pt;
+	opacity: 0.6;
+}
+
+tile table> tbody> tr> td:hover {
+	opacity: 1.0;
 }
