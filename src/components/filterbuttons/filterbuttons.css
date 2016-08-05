@@ -1,6 +1,7 @@
 filterbuttons .container {
 	padding-top: 6px;
 	padding-right: 8px;
+	z-index: 99;
 }
 
 filterbuttons .container span {
@@ -11,4 +12,18 @@ filterbuttons .container span {
 filterbuttons .container span i {
 	font-size: 14pt;
 	color: #DCE0E6;
+}
+
+filterbuttons .container span:hover {
+	text-shadow: 0px 0px 6px rgba(255,255,255,0.7);
+}
+
+filterbuttons .active {
+	position: relative;
+	top: 20px;
+	left: 31px;
+}
+
+.tooltip {
+    position: fixed;
 }

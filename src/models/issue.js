@@ -4,7 +4,9 @@ define([
 	function(ko) {
 
 		var WorkitemrModel = function({
-			name = '',
+			key = '',
+			title = '',
+			summary = '',
 		} = {}) {
 			let self = this;
 

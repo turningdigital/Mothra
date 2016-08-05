@@ -36,7 +36,9 @@ require([
 
 		var app = {
 
-			filters: Filter.list()
+			filters: Filter.list(),
+
+			issues: ko.observableArray([1, 2, 3, 4, 5, 6, 7]),
 
 		};
 

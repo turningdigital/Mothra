@@ -8,11 +8,13 @@ define([
 			name = '',
 			query = '',
 			enabled = true,
+			bgcolor = '#',
+			fontcolor = '#',
 			icon = 'fa-circle-o'
 		} = {}) {
 			let self = this;
 
-			self.name = ko.observable(name);
+			self.name = ko.observable(name)
 			self.query = ko.observable(query);
 			self.enabled = ko.observable(enabled);
 			self.icon = ko.observable(icon);
