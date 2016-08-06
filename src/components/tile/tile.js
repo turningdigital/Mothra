@@ -9,16 +9,26 @@ define([
 			viewModel: function(params) {
 				var self = this;
 
+				self.openIssue = function() {
+					console.log('open issue');
+				};
+
 				self.showMenu = function(item, e) {
-					$(e.target).next('.actions').animate({
+					let $menu = $(e.target).parent().find('.actions');
+					$menu.animate({
 						left: '0'
-					}, 75);
+					}, 75, function() {
+						$menu.css('z-index', '500');
+					});
 				};
 
 				self.hideMenu = function(item, e) {
-					$(e.target).closest('div .menu').animate({
+					let $menu = $(e.target).closest('.actions');
+					$menu.animate({
 						left: '147'
-					}, 75);
+					}, 75, function() {
+						$menu.css('z-index', '50');
+					});
 				};
 			},
 

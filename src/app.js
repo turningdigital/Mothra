@@ -24,12 +24,13 @@ require([
 		'jquery',
 		'knockout',
 		'models/filter',
+		'models/issue',
 		'components/tile/tile',
 		'components/filterbuttons/filterbuttons',
 		'bootstrap',
 		'lib/domReady!'
 	],
-	function($, ko, Filter) {
+	function($, ko, Filter, Issue) {
 		'use strict';
 
 		//Filter.seed();
@@ -38,7 +39,7 @@ require([
 
 			filters: Filter.list(),
 
-			issues: ko.observableArray([1, 2, 3, 4, 5, 6, 7]),
+			issues: ko.observableArray(Issue.list()),
 
 		};
 
