@@ -8,6 +8,11 @@
 
 .tile .main {
 	color: #DCE0E6;
+	position: absolute;
+	top: 0; 
+	left: 0;
+	background-color: red;
+	z-index: 9992;
 }
 
 .tile> div {
@@ -19,15 +24,15 @@
 	position: absolute;
 	top: 0;
 	left: 147px;
-	z-index: 5;
+	z-index: 10;
 }
 
-.tile containerCover {
+.tile .cover-container {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: transparent;
-	z-index: 99;
+	background-color: red;
+	z-index: 555;
 }
 
 .tile .menu> table {
