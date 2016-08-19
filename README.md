@@ -1,3 +1,3 @@
 # Mothra
-Mothra is Jira's ally
+Mothra is Jira's ally dipped in chrome.
 
